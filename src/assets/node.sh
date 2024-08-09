@@ -8,9 +8,9 @@ export NVM_DIR="/.nvm"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
-nvm install $NODE_VERSION
-nvm use $NODE_VERSION
-nvm alias default $NODE_VERSION
+nvm install 14.21.3
+nvm use 14.21.3
+nvm alias default 14.21.3
 npm i -g npm@$NPM_VERSION
 
 APP_PATH="$(/opt/elasticbeanstalk/bin/get-config container -k app_staging_dir)"

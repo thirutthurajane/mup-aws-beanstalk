@@ -177,11 +177,10 @@ export async function selectPlatformArn() {
       Attribute: 'PlatformName',
       Operator: '=',
       Values: ['Node.js']
-    },
-    {
+    }, {
       Attribute: 'BranchName',
-      Operator: 'begins_with',
-      Values: ['Node.js 18']
+      Operator: '=',
+      Values: ['Node.js 18 running on 64bit Amazon Linux 2']
     }, {
       Attribute: 'TierType',
       Operator: '=',
@@ -192,7 +191,6 @@ export async function selectPlatformArn() {
   if (PlatformBranchSummaryList.length === 0) {
     throw new Error('Unable to find supported Node.js platform');
   }
-
   const branchName = PlatformBranchSummaryList[0].BranchName;
 
   const {

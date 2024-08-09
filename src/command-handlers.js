@@ -139,7 +139,8 @@ export async function setup(api) {
   if (!Applications.find(app => app.ApplicationName === appName)) {
     const params = {
       ApplicationName: appName,
-      Description: `App "${appConfig.name}" managed by Meteor Up`
+      Description: `App "${appConfig.name}" managed by Meteor Up`,
+      SolutionStackName: '64bit Amazon Linux 2 v5.9.4 running Node.js 18'
     };
 
     await beanstalk.createApplication(params).promise();

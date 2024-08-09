@@ -177,6 +177,11 @@ export async function selectPlatformArn() {
       Attribute: 'PlatformName',
       Operator: '=',
       Values: ['Node.js']
+    },
+    {
+      Attribute: 'BranchName',
+      Operator: 'begins_with',
+      Values: ['Node.js 18']
     }, {
       Attribute: 'TierType',
       Operator: '=',
